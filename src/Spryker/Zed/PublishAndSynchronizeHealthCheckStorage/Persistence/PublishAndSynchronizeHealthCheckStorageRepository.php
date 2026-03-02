@@ -17,11 +17,6 @@ use Spryker\Zed\PublishAndSynchronizeHealthCheckStorage\Exception\PublishAndSync
  */
 class PublishAndSynchronizeHealthCheckStorageRepository extends AbstractRepository implements PublishAndSynchronizeHealthCheckStorageRepositoryInterface
 {
-    /**
-     * @param int $idPublishAndSynchronizeHealthCheck
-     *
-     * @return \Orm\Zed\PublishAndSynchronizeHealthCheckStorage\Persistence\SpyPublishAndSynchronizeHealthCheckStorage
-     */
     public function findOrCreatePublishAndSynchronizeHealthCheckStorageByIdPublishAndSynchronizeHealthCheck(
         int $idPublishAndSynchronizeHealthCheck
     ): SpyPublishAndSynchronizeHealthCheckStorage {

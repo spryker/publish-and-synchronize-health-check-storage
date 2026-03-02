@@ -22,9 +22,6 @@ use Spryker\Zed\PublishAndSynchronizeHealthCheckStorage\PublishAndSynchronizeHea
  */
 class PublishAndSynchronizeHealthCheckStorageBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\PublishAndSynchronizeHealthCheckStorage\Business\Writer\PublishAndSynchronizeHealthCheckStorageWriterInterface
-     */
     public function createPublishAndSynchronizeHealthCheckStorageWriter(): PublishAndSynchronizeHealthCheckStorageWriterInterface
     {
         return new PublishAndSynchronizeHealthCheckStorageWriter(
@@ -33,17 +30,11 @@ class PublishAndSynchronizeHealthCheckStorageBusinessFactory extends AbstractBus
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PublishAndSynchronizeHealthCheckStorage\Dependency\Facade\PublishAndSynchronizeHealthCheckStorageToEventBehaviorFacadeInterface
-     */
     public function getEventBehaviorFacade(): PublishAndSynchronizeHealthCheckStorageToEventBehaviorFacadeInterface
     {
         return $this->getProvidedDependency(PublishAndSynchronizeHealthCheckStorageDependencyProvider::FACADE_EVENT_BEHAVIOR);
     }
 
-    /**
-     * @return \Spryker\Zed\PublishAndSynchronizeHealthCheckStorage\Business\HealthCheck\HealthCheckInterface
-     */
     public function createHealthCheck(): HealthCheckInterface
     {
         return new HealthCheck(
@@ -52,9 +43,6 @@ class PublishAndSynchronizeHealthCheckStorageBusinessFactory extends AbstractBus
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PublishAndSynchronizeHealthCheckStorage\Dependency\Client\PublishAndSynchronizeHealthCheckStorageToStorageClientInterface
-     */
     public function getStorageClient(): PublishAndSynchronizeHealthCheckStorageToStorageClientInterface
     {
         return $this->getProvidedDependency(PublishAndSynchronizeHealthCheckStorageDependencyProvider::CLIENT_STORAGE);

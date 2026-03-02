@@ -27,10 +27,6 @@ class HealthCheck implements HealthCheckInterface
      */
     protected $publishAndSynchronizeHealthCheckStorageConfig;
 
-    /**
-     * @param \Spryker\Zed\PublishAndSynchronizeHealthCheckStorage\Dependency\Client\PublishAndSynchronizeHealthCheckStorageToStorageClientInterface $storageClient
-     * @param \Spryker\Zed\PublishAndSynchronizeHealthCheckStorage\PublishAndSynchronizeHealthCheckStorageConfig $publishAndSynchronizeHealthCheckStorageConfig
-     */
     public function __construct(
         PublishAndSynchronizeHealthCheckStorageToStorageClientInterface $storageClient,
         PublishAndSynchronizeHealthCheckStorageConfig $publishAndSynchronizeHealthCheckStorageConfig
@@ -39,9 +35,6 @@ class HealthCheck implements HealthCheckInterface
         $this->publishAndSynchronizeHealthCheckStorageConfig = $publishAndSynchronizeHealthCheckStorageConfig;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\HealthCheckServiceResponseTransfer
-     */
     public function performHealthCheck(): HealthCheckServiceResponseTransfer
     {
         $healthCheckServiceResponseTransfer = new HealthCheckServiceResponseTransfer();
@@ -92,12 +85,6 @@ class HealthCheck implements HealthCheckInterface
         return true;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\HealthCheckServiceResponseTransfer $healthCheckServiceResponseTransfer
-     * @param string $message
-     *
-     * @return \Generated\Shared\Transfer\HealthCheckServiceResponseTransfer
-     */
     protected function failedResponse(
         HealthCheckServiceResponseTransfer $healthCheckServiceResponseTransfer,
         string $message

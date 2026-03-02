@@ -39,11 +39,6 @@ class PublishAndSynchronizeHealthCheckStorageDependencyProvider extends Abstract
      */
     public const FACADE_PUBLISH_AND_SYNCHRONIZE_HEALTH_CHECK = 'FACADE_PUBLISH_AND_SYNCHRONIZE_HEALTH_CHECK';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = $this->addEventBehaviorFacade($container);
@@ -52,11 +47,6 @@ class PublishAndSynchronizeHealthCheckStorageDependencyProvider extends Abstract
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function providePersistenceLayerDependencies(Container $container): Container
     {
         $container = $this->addPublishAndSynchronizeHealthCheckQuery($container);
@@ -64,11 +54,6 @@ class PublishAndSynchronizeHealthCheckStorageDependencyProvider extends Abstract
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $container = $this->addPublishAndSynchronizeHealthCheckFacade($container);
@@ -76,11 +61,6 @@ class PublishAndSynchronizeHealthCheckStorageDependencyProvider extends Abstract
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addEventBehaviorFacade(Container $container): Container
     {
         $container->set(static::FACADE_EVENT_BEHAVIOR, function (Container $container) {
@@ -90,11 +70,6 @@ class PublishAndSynchronizeHealthCheckStorageDependencyProvider extends Abstract
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addStorageClient(Container $container): Container
     {
         $container->set(static::CLIENT_STORAGE, function (Container $container) {
@@ -104,11 +79,6 @@ class PublishAndSynchronizeHealthCheckStorageDependencyProvider extends Abstract
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addPublishAndSynchronizeHealthCheckQuery(Container $container): Container
     {
         $container->set(static::PROPEL_PUBLISH_AND_SYNCHRONIZE_HEALTH_CHECK_QUERY, $container->factory(function (): SpyPublishAndSynchronizeHealthCheckQuery {
@@ -118,11 +88,6 @@ class PublishAndSynchronizeHealthCheckStorageDependencyProvider extends Abstract
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addPublishAndSynchronizeHealthCheckFacade(Container $container): Container
     {
         $container->set(static::FACADE_PUBLISH_AND_SYNCHRONIZE_HEALTH_CHECK, function (Container $container) {

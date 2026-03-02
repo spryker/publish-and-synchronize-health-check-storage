@@ -18,17 +18,11 @@ use Spryker\Zed\PublishAndSynchronizeHealthCheckStorage\PublishAndSynchronizeHea
  */
 class PublishAndSynchronizeHealthCheckStoragePersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\PublishAndSynchronizeHealthCheckStorage\Persistence\SpyPublishAndSynchronizeHealthCheckStorageQuery
-     */
     public function createPublishAndSynchronizeHealthCheckStoragePropelQuery(): SpyPublishAndSynchronizeHealthCheckStorageQuery
     {
         return SpyPublishAndSynchronizeHealthCheckStorageQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\PublishAndSynchronizeHealthCheck\Persistence\SpyPublishAndSynchronizeHealthCheckQuery
-     */
     public function getPublishAndSynchronizeHealthCheckPropelQuery(): SpyPublishAndSynchronizeHealthCheckQuery
     {
         return $this->getProvidedDependency(PublishAndSynchronizeHealthCheckStorageDependencyProvider::PROPEL_PUBLISH_AND_SYNCHRONIZE_HEALTH_CHECK_QUERY);

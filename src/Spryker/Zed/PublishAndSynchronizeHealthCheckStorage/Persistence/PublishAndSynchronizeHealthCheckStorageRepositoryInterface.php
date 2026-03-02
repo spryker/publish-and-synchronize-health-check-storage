@@ -12,20 +12,10 @@ use Orm\Zed\PublishAndSynchronizeHealthCheckStorage\Persistence\SpyPublishAndSyn
 
 interface PublishAndSynchronizeHealthCheckStorageRepositoryInterface
 {
-    /**
-     * @param int $idPublishAndSynchronizeHealthCheck
-     *
-     * @return \Orm\Zed\PublishAndSynchronizeHealthCheckStorage\Persistence\SpyPublishAndSynchronizeHealthCheckStorage
-     */
     public function findOrCreatePublishAndSynchronizeHealthCheckStorageByIdPublishAndSynchronizeHealthCheck(
         int $idPublishAndSynchronizeHealthCheck
     ): SpyPublishAndSynchronizeHealthCheckStorage;
 
-    /**
-     * @param int $idPublishAndSynchronizeHealthCheck
-     *
-     * @return \Generated\Shared\Transfer\PublishAndSynchronizeHealthCheckTransfer
-     */
     public function getPublishAndSynchronizeHealthCheckTransferByIdPublishAndSynchronizeHealthCheck(
         int $idPublishAndSynchronizeHealthCheck
     ): PublishAndSynchronizeHealthCheckTransfer;

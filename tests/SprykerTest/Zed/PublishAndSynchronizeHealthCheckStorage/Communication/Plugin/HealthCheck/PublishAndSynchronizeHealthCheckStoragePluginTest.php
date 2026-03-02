@@ -32,18 +32,12 @@ class PublishAndSynchronizeHealthCheckStoragePluginTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testGetNameReturnsTheNameOfTheHealthCheckPlugin(): void
     {
         $publishAndSynchronizeReadHealthCheckStoragePlugin = new PublishAndSynchronizeHealthCheckStoragePlugin();
         $this->assertEquals('publish-and-synchronize-storage', $publishAndSynchronizeReadHealthCheckStoragePlugin->getName());
     }
 
-    /**
-     * @return void
-     */
     public function testCheckReturnsFailedResponseWhenDataByKeyNotFound(): void
     {
         // Arrange
@@ -56,9 +50,6 @@ class PublishAndSynchronizeHealthCheckStoragePluginTest extends Unit
         $this->assertFalse($healthCheckServiceResponseTransfer->getStatus());
     }
 
-    /**
-     * @return void
-     */
     public function testCheckReturnsFailedResponseWhenDataIsOlderThanTheExpectedThreshold(): void
     {
         // Arrange
@@ -83,9 +74,6 @@ class PublishAndSynchronizeHealthCheckStoragePluginTest extends Unit
         $this->assertFalse($healthCheckServiceResponseTransfer->getStatus());
     }
 
-    /**
-     * @return void
-     */
     public function testCheckReturnsSuccessfulResponseWhenDataIsNotOlderThanTheExpectedThreshold(): void
     {
         // Arrange

@@ -25,11 +25,6 @@ class PublishAndSynchronizeHealthCheckStorageToPublishAndSynchronizeHealthCheckF
         $this->publishAndSynchronizeHealthCheckFacade = $publishAndSynchronizeHealthCheckFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PublishAndSynchronizeHealthCheckCriteriaTransfer $publishAndSynchronizeHealthCheckCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\PublishAndSynchronizeHealthCheckCollectionTransfer
-     */
     public function getPublishAndSynchronizeHealthCheckCollection(
         PublishAndSynchronizeHealthCheckCriteriaTransfer $publishAndSynchronizeHealthCheckCriteriaTransfer
     ): PublishAndSynchronizeHealthCheckCollectionTransfer {

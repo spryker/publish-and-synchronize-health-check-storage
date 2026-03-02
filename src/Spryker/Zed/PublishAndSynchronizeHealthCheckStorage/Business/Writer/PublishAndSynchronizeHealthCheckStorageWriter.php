@@ -24,10 +24,6 @@ class PublishAndSynchronizeHealthCheckStorageWriter implements PublishAndSynchro
      */
     protected $publishAndSynchronizeHealthCheckStorageRepository;
 
-    /**
-     * @param \Spryker\Zed\PublishAndSynchronizeHealthCheckStorage\Dependency\Facade\PublishAndSynchronizeHealthCheckStorageToEventBehaviorFacadeInterface $eventBehaviorFacade
-     * @param \Spryker\Zed\PublishAndSynchronizeHealthCheckStorage\Persistence\PublishAndSynchronizeHealthCheckStorageRepositoryInterface $publishAndSynchronizeHealthCheckStorageRepository
-     */
     public function __construct(
         PublishAndSynchronizeHealthCheckStorageToEventBehaviorFacadeInterface $eventBehaviorFacade,
         PublishAndSynchronizeHealthCheckStorageRepositoryInterface $publishAndSynchronizeHealthCheckStorageRepository

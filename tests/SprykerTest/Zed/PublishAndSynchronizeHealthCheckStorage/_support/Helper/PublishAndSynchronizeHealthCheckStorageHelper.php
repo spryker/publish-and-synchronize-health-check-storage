@@ -13,11 +13,6 @@ use SprykerTest\Shared\Testify\Helper\AbstractHelper;
 
 class PublishAndSynchronizeHealthCheckStorageHelper extends AbstractHelper
 {
-    /**
-     * @param \Codeception\TestInterface $test
-     *
-     * @return void
-     */
     public function _after(TestInterface $test): void
     {
         SpyPublishAndSynchronizeHealthCheckStorageQuery::create()->find()->delete();

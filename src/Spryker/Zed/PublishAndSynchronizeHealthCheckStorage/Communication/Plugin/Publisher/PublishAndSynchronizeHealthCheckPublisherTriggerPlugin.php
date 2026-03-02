@@ -85,12 +85,6 @@ class PublishAndSynchronizeHealthCheckPublisherTriggerPlugin extends AbstractPlu
         return static::COL_ID_PUBLISH_AND_SYNCHRONIZE_HEALTH_CHECK;
     }
 
-    /**
-     * @param int $offset
-     * @param int $limit
-     *
-     * @return \Generated\Shared\Transfer\PublishAndSynchronizeHealthCheckCriteriaTransfer
-     */
     protected function createPublishAndSynchronizeHealthCheckCriteriaTransfer(int $offset, int $limit): PublishAndSynchronizeHealthCheckCriteriaTransfer
     {
         return (new PublishAndSynchronizeHealthCheckCriteriaTransfer())

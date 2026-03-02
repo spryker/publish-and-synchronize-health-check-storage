@@ -18,9 +18,6 @@ use Spryker\Zed\PublishAndSynchronizeHealthCheckStorage\PublishAndSynchronizeHea
  */
 class PublishAndSynchronizeHealthCheckStorageCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\PublishAndSynchronizeHealthCheckStorage\Dependency\Facade\PublishAndSynchronizeHealthCheckStorageToPublishAndSynchronizeHealthCheckFacadeInterface
-     */
     public function getPublishAndSynchronizeHealthCheckFacade(): PublishAndSynchronizeHealthCheckStorageToPublishAndSynchronizeHealthCheckFacadeInterface
     {
         return $this->getProvidedDependency(PublishAndSynchronizeHealthCheckStorageDependencyProvider::FACADE_PUBLISH_AND_SYNCHRONIZE_HEALTH_CHECK);

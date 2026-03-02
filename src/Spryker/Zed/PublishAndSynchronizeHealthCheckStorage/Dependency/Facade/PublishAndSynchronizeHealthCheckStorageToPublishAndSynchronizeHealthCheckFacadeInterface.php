@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\PublishAndSynchronizeHealthCheckCriteriaTransfer;
 
 interface PublishAndSynchronizeHealthCheckStorageToPublishAndSynchronizeHealthCheckFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\PublishAndSynchronizeHealthCheckCriteriaTransfer $publishAndSynchronizeHealthCheckCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\PublishAndSynchronizeHealthCheckCollectionTransfer
-     */
     public function getPublishAndSynchronizeHealthCheckCollection(
         PublishAndSynchronizeHealthCheckCriteriaTransfer $publishAndSynchronizeHealthCheckCriteriaTransfer
     ): PublishAndSynchronizeHealthCheckCollectionTransfer;
