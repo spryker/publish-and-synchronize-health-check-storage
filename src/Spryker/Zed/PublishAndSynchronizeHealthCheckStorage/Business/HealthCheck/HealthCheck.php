@@ -8,6 +8,7 @@
 namespace Spryker\Zed\PublishAndSynchronizeHealthCheckStorage\Business\HealthCheck;
 
 use DateInterval;
+use DateMalformedIntervalStringException;
 use DateTime;
 use Generated\Shared\Transfer\HealthCheckServiceResponseTransfer;
 use RuntimeException;
@@ -68,9 +69,16 @@ class HealthCheck implements HealthCheckInterface
      */
     protected function isValid(array $publishAndSynchronizeHealthCheckStorageData): bool
     {
-        $dateInterval = DateInterval::createFromDateString($this->publishAndSynchronizeHealthCheckStorageConfig->getValidationThreshold());
-        if ($dateInterval === false) {
-            throw new RuntimeException('Cannot create a DateInterval from `PublishAndSynchronizeHealthCheckStorageConfig::getValidationThreshold()`');
+        $validationThreshold = $this->publishAndSynchronizeHealthCheckStorageConfig->getValidationThreshold();
+
+        try {
+            $dateInterval = DateInterval::createFromDateString($validationThreshold);
+        } catch (DateMalformedIntervalStringException $exception) {
+            throw new RuntimeException(
+                sprintf('Cannot create a DateInterval from `PublishAndSynchronizeHealthCheckStorageConfig::getValidationThreshold()` value "%s".', $validationThreshold),
+                0,
+                $exception,
+            );
         }
 
         $now = new DateTime();
