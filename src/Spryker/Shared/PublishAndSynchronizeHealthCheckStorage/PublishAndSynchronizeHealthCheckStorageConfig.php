@@ -7,9 +7,9 @@
 
 namespace Spryker\Shared\PublishAndSynchronizeHealthCheckStorage;
 
-use Spryker\Shared\Kernel\AbstractBundleConfig;
+use Spryker\Shared\Kernel\AbstractSharedConfig;
 
-class PublishAndSynchronizeHealthCheckStorageConfig extends AbstractBundleConfig
+class PublishAndSynchronizeHealthCheckStorageConfig extends AbstractSharedConfig
 {
     /**
      * Defines queue name for processing synchronize.
